@@ -1,0 +1,123 @@
+<div class="col-md-10">
+<div class="row">
+	<div class="col-md-3">
+	
+		<img ng-src="{{ serie.poster }}" alt="{{ serie.nome }}" class="img-responsive img-thumbnail">
+	
+		<div class="sidebar-buttons">
+			<div class="btn-group btn-group-justified" role="group">
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-primary" uib-tooltip="Adicionar à Grade" tooltip-append-to-body="true">
+						<span class="glyphicon glyphicon-plus"></span>
+					</button>
+				</div>
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-info" uib-tooltip="Adicionar à Geladeira" tooltip-append-to-body="true">
+						<span class="glyphicon glyphicon-eye-close"></span>
+					</button>
+				</div>
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-warning" uib-tooltip="Marcar Tudo Como Visto" tooltip-append-to-body="true">
+						<span class="glyphicon glyphicon-list-alt"></span>
+					</button>
+				</div>
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-success" uib-tooltip="Finalizar Maratona" tooltip-append-to-body="true">
+						<span class="glyphicon glyphicon-ok"></span>
+					</button>
+				</div>
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-danger" uib-tooltip="Resetar Tudo" tooltip-append-to-body="true">
+						<span class="glyphicon glyphicon-remove"></span>
+					</button>
+				</div>
+			</div>
+		</div> <!-- /sidebar -->
+	</div>
+
+	<div class="col-md-9">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="page-header">
+					<h1>{{ serie.nome }} <small>{{ serie.anoInicio }}<span ng-if="serie.anoFim>0">–{{ serie.anoFim }}</span></small></h1>
+				</div>
+				<div class="row border-bottom">
+					<div class="col-xs-6">
+						<div><strong>Status:</strong> Renovada</div>
+						<div><strong>Média do Site:</strong> 8.95 (3201 notas)</div>
+						<div><strong>Canal:</strong> BBC One</div>
+						<div><strong>Duração Episodio:</strong> 60 min</div>
+					</div>
+					<div class="col-xs-6">
+						<div><strong>Links:</strong> imdb</div>
+						<div><strong>Minha média:</strong> 9.42 (6 notas)</div>
+						<div><strong>País:</strong> UK</div>
+						<div><strong>Próximo Episódio:</strong> Indefinido</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 sinopse text-justify">
+						<strong>Sinopse:</strong> A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground "fight clubs" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<temporada-modal serie="serie"></temporada-modal>
+
+		<uib-accordion close-others="true">
+			<uib-accordion-group heading="Temporada {{ temporada.temporada }}" ng-repeat="temporada in serie.episodios" ng-if="temporada.temporada != serie.episodios[$index-1].temporada">
+				<div class="row" ng-repeat="episodio in serie.episodios" ng-if="episodio.temporada == temporada.temporada">
+					<div class="col-md-1 text-right">
+						{{ episodio.numero }}
+					</div>
+					<div class="col-md-5">
+						{{ episodio.nome }}
+					</div>
+					<div class="col-md-2">
+						{{ episodio.dataExibicao | date: 'dd/MM/yyyy' }}
+					</div>
+					<div class="col-md-1">
+						<span class="glyphicon glyphicon-ok"></span>
+					</div>
+					<div class="col-md-3">
+						<span class="glyphicon glyphicon-star" ng-repeat=""></span>
+					</div>
+				</div>
+			</uib-accordion-group>
+		</uib-accordion>
+
+	</div> <!-- /conteudo-central -->
+</div>
+</div>
+
+<div class="col-md-2">
+	<h4>Top 10</h4>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Ep.</th>
+				<th>Média</th>
+				<th>Data</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>3x04</td>
+				<td>9.53</td>
+				<td>23/07/13</td>
+			</tr>
+			<tr>
+				<td>1x06</td>
+				<td>9.45</td>
+				<td>08/04/10</td>
+			</tr>
+			<tr>
+				<td>1x05</td>
+				<td>9.31</td>
+				<td>01/06/10</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

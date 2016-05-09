@@ -1,0 +1,50 @@
+<div class="well col-xs-12" >
+	<form ng-submit="adicionaSerie()" class="form-horizontal">
+		<div class="form-group">
+			<label for="nome" class="col-sm-2 control-label">Série</label>
+			<div class="col-sm-10">
+				<input type="text" id="nome" class="form-control" ng-model="serie.nome">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="canal" class="col-sm-2 control-label">Canal</label>
+			<div class="col-sm-10">				
+				<div class="btn-group" uib-dropdown>
+					<button class="btn btn-default" type="button" id="canal" uib-dropdown-toggle >
+						<span class="conteudo">{{ serie.canal.nome }}</span>
+						<span class="caret"></span>
+					</button>
+					<ul class="uib-dropdown-menu">
+						<li ng-repeat="canal in canais"><a ng-click="seleciona(canal.id)">{{ canal.nome }}</a></li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="poster" class="col-sm-2 control-label">Imagem</label>
+			<div class="col-sm-10">
+				<input type="text" id="poster" class="form-control" ng-model="serie.poster">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-default">Enviar</button>
+				<button type="button" class="btn btn-default" ng-show="serie.id != null" ng-click="resetaSerie()">Cancelar</button>
+			</div>
+		</div>
+	</form>
+	
+	<div ng-show="mensagem != null" class="alert alert-success" role="alert">{{ mensagem }}</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-6 col-md-2" ng-repeat="serie in series">
+		<a href="/#/series/{{ serie.id }}" class="thumbnail">
+			<img ng-src="{{ serie.poster }}" alt="{{ serie.nome }}">
+		</a>
+		<span class="glyphicon glyphicon-remove glyph-remove" ng-click="deletaSerie(serie.id)"></span>
+		<span class="glyphicon glyphicon-edit glyph-edit" ng-click="carregaSerie(serie.id)"></span>
+		
+	</div>
+</div>

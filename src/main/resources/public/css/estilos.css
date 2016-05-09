@@ -1,0 +1,178 @@
+.nav, .pagination, .carousel, .panel-title a { 
+	cursor: pointer; 
+}
+
+.dropdown-menu a {
+	cursor: pointer;
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin-bottom: 60px;
+	background-color: #F1F1F1;
+	color: #4C4C4C;
+}
+
+body.modal-open {
+	overflow:inherit;
+	padding-right:inherit !important;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	background-color: #4C4C4C;
+}
+
+.container .text-muted {
+	margin: 20px 0;
+}
+
+.footer > .container {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+input, select {
+	outline: none;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+.glyph-remove {
+	position: absolute;
+	top: 2px;
+	right: -2px;
+	color: #c04442;
+}
+
+.glyph-remove:hover {
+	color: red;
+	cursor: pointer;
+}
+
+.glyph-edit {
+	position: absolute;
+	top: 20px;
+	right: -3px;
+	color: #31708f;
+}
+
+.glyph-edit:hover {
+	color: #00abff;
+	cursor: pointer;
+}
+
+a:focus, button:focus {
+   outline: 0 !important;
+}
+
+.form-group .dropdown-toggle {
+	min-width: 160px;
+	text-align: left;
+}
+
+.form-group .dropdown-toggle:focus {
+	border-color: #66afe9 !important;
+}
+
+.form-group .dropdown-toggle .conteudo {
+	float: left;
+}
+
+.form-group .dropdown-toggle .caret {
+	float: right;
+	margin-top: 8px;
+}
+
+.sidebar-buttons {
+	padding: 10px 3px;
+}
+
+.sidebar-buttons button {
+	padding-bottom: 4px;
+}
+
+span.glyphicon {
+    font-size: 1.2em;
+}
+
+.panel .page-header {
+	margin: 10px 0 15px;
+}
+
+.panel h1 {
+	margin: 0;
+}
+
+.border-bottom {
+	border-bottom: 1px solid #EEE;
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+}
+
+.navbar-form {
+	margin-top: 10px;
+}
+
+.panel-heading h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: normal;
+    width: 75%;
+    padding-top: 8px;
+}
+
+.panel-heading .glyphicon {
+	top: 2px;
+	left: 1px;
+}
+
+.alinhar-btn {
+	margin-top: 25px;
+}
+
+.well h4 {
+	margin-top: 0;
+}
+
+.well table {
+	margin-bottom: 0;
+}
+
+.icones {
+	text-align: right;
+	max-width: 40px;
+}
+
+.icones span {
+	cursor: pointer;
+}
+
+.icones span:first-child {
+	margin-right: 5px;
+}
+
+.icones .glyphicon-edit {
+	color: #31708F;
+}
+
+.icones .glyphicon-edit:hover {
+	color: #00ABFF;
+}
+
+.icones .glyphicon-remove {
+	color: #C04442;
+}
+
+.icones .glyphicon-remove:hover {
+	color: #F00;
+}

@@ -1,0 +1,62 @@
+<div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+		
+			<div class="modal-header">
+				<button type="button" class="close" aria-label="Close" ng-click="$hide()"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Temporada {{ temporada }}</h4>
+			</div>
+			
+			<div class="modal-body">
+				<form class="form">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="numEpisodios"># Episódios</label>
+								<input type="number" id="numEpisodios" class="form-control input-sm" min="1" ng-model="numEpisodios">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<label for="dataPrimeiro">Data da Premiere</label>
+							<div class="input-group">
+								<input type="text" id="dataPrimeiro" class="form-control input-sm" uib-datepicker-popup="dd/MM/yyyy" ng-model="dataPrimeiro" is-open="status.opened" ng-required="true" close-text="Fechar">
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default btn-sm" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+								</span>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<button type="button" class="btn btn-default btn-sm alinhar-btn pull-right" ng-click="gerarEpisodios()">Gerar Episódios</button>
+						</div>
+						<div class="col-md-2">
+							<button type="button" class="btn btn-default btn-sm alinhar-btn pull-right" ng-click="adicionaEpisodioInput()">Adic. 1</button>
+						</div>
+					</div>
+				</form>
+				
+				<hr>
+				
+				
+				<form class="form-inline" action="">
+					<div ng-repeat="episodio in episodios">
+						<h4>Episódio {{ episodio.numero }}</h4>
+						<div class="form-group">
+				            <input type="text" class="form-control" ng-model="episodio.dataExibicao" placeholder="Data" bs-datepicker date-format="dd/MM/yyyy" model-date-format="yyyy-MM-dd" date-type="string" autoclose="true">
+				        </div>
+				        <div class="form-group">
+				            <input type="text" class="form-control" ng-model="episodio.nome" placeholder="Título">
+				        </div>
+			        </div>
+				</form>
+				
+
+			</div>
+			
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" ng-click="$hide()">Cancelar</button>
+				<button type="button" class="btn btn-default" ng-click="salvar()">Salvar</button>
+			</div>
+			
+		</div>
+	</div>
+</div>
